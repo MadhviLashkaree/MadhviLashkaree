@@ -5,210 +5,398 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madhvi Lashkaree - IT Support Specialist</title>
 <style>
+  :root {
+    --navy: #1a3a5c;
+    --blue: #2c5f8a;
+    --blue-light: #e8f1f8;
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #5c6773;
+    --border: #e2e6ea;
+  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f4f6f8;
-    color: #1a1a1a;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
   }
-  .container {
-    max-width: 850px;
-    margin: 40px auto;
-    background: #ffffff;
-    padding: 40px 50px;
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  a { color: inherit; }
+
+  /* NAVBAR */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 14px 20px;
+    flex-wrap: wrap;
   }
-  header {
-    text-align: center;
-    border-bottom: 3px solid #2c5f8a;
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-  }
-  header h1 {
-    font-size: 32px;
-    color: #1a1a1a;
-    margin-bottom: 4px;
-  }
-  header h2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #2c5f8a;
-    margin-bottom: 12px;
-  }
-  .contact {
-    font-size: 14px;
-    color: #444;
-  }
-  .contact a {
-    color: #2c5f8a;
+  nav a {
     text-decoration: none;
-  }
-  .contact a:hover { text-decoration: underline; }
-  .contact span { margin: 0 8px; color: #bbb; }
-
-  section { margin-bottom: 28px; }
-  h3.section-title {
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #2c5f8a;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
-    margin-bottom: 14px;
-  }
-  .summary { font-size: 15px; color: #333; }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    row-gap: 12px;
-    column-gap: 20px;
+    color: var(--muted);
     font-size: 14px;
-  }
-  .skills-grid .label {
     font-weight: 600;
-    color: #1a1a1a;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background 0.2s, color 0.2s;
   }
-  .skills-grid .value { color: #444; }
+  nav a:hover { background: var(--blue-light); color: var(--blue); }
 
-  .job { margin-bottom: 18px; }
+  section { padding: 70px 20px; }
+  .inner { max-width: 950px; margin: 0 auto; }
+
+  /* HERO */
+  #home {
+    background: linear-gradient(180deg, var(--blue-light) 0%, var(--bg) 100%);
+    text-align: center;
+    padding-top: 90px;
+  }
+  .avatar {
+    font-size: 48px;
+    width: 96px;
+    height: 96px;
+    line-height: 96px;
+    border-radius: 50%;
+    background: var(--card);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    margin: 0 auto 20px;
+  }
+  #home .tag {
+    color: var(--blue);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  #home h1 { font-size: 38px; margin-bottom: 18px; color: var(--navy); }
+  #home ul {
+    max-width: 680px;
+    margin: 0 auto 26px;
+    text-align: left;
+    color: var(--muted);
+    font-size: 15px;
+    list-style: none;
+  }
+  #home ul li { margin-bottom: 8px; padding-left: 18px; position: relative; }
+  #home ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+  .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 10px;}
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+  }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: var(--navy); }
+  .btn-outline { background: #fff; color: var(--blue); border: 1px solid var(--blue); }
+  .btn-outline:hover { background: var(--blue-light); }
+
+  .contact-row {
+    margin-top: 26px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .contact-row span { margin: 0 8px; color: #c4cbd2; }
+  .contact-row a { text-decoration: none; color: var(--blue); }
+  .contact-row a:hover { text-decoration: underline; }
+
+  /* SECTION HEADERS */
+  .section-eyebrow {
+    text-align: center;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 40px;
+  }
+
+  /* STATS */
+  #stats { background: var(--card); padding: 50px 20px; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .stat-num { font-size: 30px; font-weight: 700; color: var(--blue); }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* TERMINAL CARD */
+  .terminal {
+    background: #10222f;
+    color: #d7e6ef;
+    border-radius: 10px;
+    padding: 24px 28px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    max-width: 640px;
+    margin: 40px auto 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .terminal .bar { color: #7fa8c9; margin-bottom: 14px; font-size: 12px; }
+  .terminal .prompt { color: #6ee7b7; }
+  .terminal p { margin-bottom: 12px; }
+  .terminal .val { color: #a8d8ff; }
+
+  /* EXPERIENCE */
+  #experience { background: var(--bg); }
+  .job {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 26px 30px;
+    margin-bottom: 20px;
+  }
   .job-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 10px;
   }
-  .job-title { font-weight: 700; font-size: 15px; }
-  .job-date { font-size: 13px; color: #777; font-style: italic; }
-  .job ul { margin: 8px 0 0 20px; font-size: 14px; color: #333; }
-  .job ul li { margin-bottom: 6px; }
+  .job-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .job-sub { font-size: 14px; color: var(--blue); font-weight: 600; }
+  .job-date {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--blue-light);
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  .job ul { margin: 14px 0 0 20px; font-size: 14.5px; color: #3a3f45; }
+  .job ul li { margin-bottom: 8px; }
 
-  .edu-title { font-weight: 700; font-size: 15px; }
-  .edu-sub { font-size: 14px; color: #555; }
+  /* SKILLS */
+  #skills { background: var(--card); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .skill-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .skill-card h4 {
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .skill-card p { font-size: 12.5px; color: var(--muted); margin-bottom: 12px; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill {
+    font-size: 11.5px;
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
 
+  /* PROJECTS */
+  #projects { background: var(--bg); }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
   }
   .project-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 18px;
-    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.15s, box-shadow 0.15s;
   }
   .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
   }
-  .project-icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-  .project-name {
+  .project-cat {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--blue);
     font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 6px;
-    color: #1a1a1a;
+    margin-bottom: 8px;
   }
-  .project-desc {
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 12px;
-    min-height: 36px;
+  .project-icon { font-size: 26px; margin-bottom: 10px; }
+  .project-name { font-size: 15.5px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .project-desc { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; flex-grow: 1; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .project-tags span {
+    font-size: 11px;
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 3px 9px;
+    border-radius: 12px;
   }
   .project-link {
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 600;
-    color: #fff;
-    background: #2c5f8a;
-    padding: 7px 14px;
-    border-radius: 5px;
+    align-self: flex-start;
     text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--blue);
+    padding: 8px 16px;
+    border-radius: 6px;
   }
-  .project-link:hover { background: #1f4a6d; }
+  .project-link:hover { background: var(--navy); }
+
+  /* CERTS */
+  #certifications { background: var(--card); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .cert-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .cert-name { font-size: 14.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .cert-sub { font-size: 12.5px; color: var(--blue); margin-bottom: 8px; font-weight: 600; }
+  .cert-desc { font-size: 13px; color: var(--muted); }
+
+  /* EDUCATION */
+  #education { background: var(--bg); }
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+  .edu-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+  .edu-sub { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
 
   footer {
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    padding: 34px 20px;
     font-size: 13px;
-    color: #777;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
   }
 
-  @media (max-width: 600px) {
-    .container { padding: 25px 20px; margin: 15px; }
-    .skills-grid { grid-template-columns: 1fr; row-gap: 4px; }
-    .contact span { display: none; }
-    .contact { display: flex; flex-direction: column; gap: 4px; }
+  @media (max-width: 700px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .job-header { flex-direction: column; align-items: flex-start; gap: 6px; }
+    #home h1 { font-size: 28px; }
+    nav { gap: 2px; }
+    nav a { padding: 8px 10px; font-size: 13px; }
   }
 </style>
 </head>
 <body>
 
-<div class="container">
+<nav>
+  <a href="#home">Home</a>
+  <a href="#experience">Experience & Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#certifications">Certifications</a>
+</nav>
 
-  <header>
+<!-- HOME / HERO -->
+<section id="home">
+  <div class="inner">
+    <div class="avatar">🧑‍💻</div>
+    <div class="tag">IT Support Specialist</div>
     <h1>Madhvi Lashkaree</h1>
-    <h2>IT Support Specialist</h2>
-    <div class="contact">
+    <ul>
+      <li>Actively seeking IT Support Specialist / Help Desk / Systems Administration opportunities.</li>
+      <li>Hands-on experience with Windows 11/10, Active Directory, Microsoft 365 administration, and network troubleshooting in a multi-campus education environment.</li>
+      <li>Currently pursuing Microsoft 365 Endpoint Administrator Associate (MD-102), building on a Graduate Certificate in Cybersecurity from Durham College.</li>
+      <li>Comfortable resolving Tier 1/2 incidents, documenting solutions, and supporting end users across desktops, mobile devices, and enterprise applications.</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#projects">View Projects</a>
+      <a class="btn btn-outline" href="resume.pdf" target="_blank">Download Resume</a>
+    </div>
+    <div class="contact-row">
       📍 Whitby, Ontario, Canada <span>|</span>
       📞 +1-905-424-8182 <span>|</span>
       ✉️ <a href="mailto:madhvisadhu83@gmail.com">madhvisadhu83@gmail.com</a> <span>|</span>
       <a href="https://linkedin.com/in/madhvisadhu" target="_blank">LinkedIn</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section>
-    <h3 class="section-title">Professional Summary</h3>
-    <p class="summary">
-      IT support professional experienced in Windows 11, Active Directory, network troubleshooting,
-      ticket management, and end-user support. Strong customer service and communication skills, with
-      experience resolving technical issues, documenting solutions, and escalating complex problems.
-      Currently pursuing Microsoft 365 Endpoint Administrator Associate (MD-102) and seeking to grow
-      in an IT Support Specialist role.
-    </p>
-  </section>
-
-  <section>
-    <h3 class="section-title">Technical Skills</h3>
-    <div class="skills-grid">
-      <div class="label">IT Support & Customer Service</div>
-      <div class="value">Technical Support, Help Desk Operations, Incident Management, Service Request Management, Remote Desktop Support, Root Cause Analysis, Hardware & Software Troubleshooting, Ticket Management, End-User Support, Technical Documentation</div>
-
-      <div class="label">ITSM & Documentation</div>
-      <div class="value">Ticket Management Systems, Knowledge Base & SOP Development, Asset Inventory and Lifecycle Management, Audit-Ready Technical Documentation and Service Reporting, ITIL Principles</div>
-
-      <div class="label">System Administration</div>
-      <div class="value">Windows 11/10, Windows Application Support, Active Directory, Group Policy, User & Access Management, Account Provisioning, Microsoft 365, Microsoft Windows Administration</div>
-
-      <div class="label">Networking</div>
-      <div class="value">TCP/IP, UDP, ICMP, DNS, DHCP, NAT, VLANs, Network Segmentation, Routing & Switching, Wi-Fi, IP Addressing, Subnetting, Network Troubleshooting, Network Performance Analysis, Enterprise Network Architecture</div>
-
-      <div class="label">Remote Access & Communication</div>
-      <div class="value">VPN, Remote Access, ZTNA, VoIP Phone Systems</div>
-
-      <div class="label">Scripting & Automation</div>
-      <div class="value">PowerShell, Python, Bash Scripting, Task Automation, Script Development, Process Automation, Basic System Administration Scripting</div>
-
-      <div class="label">Security Operations</div>
-      <div class="value">Vulnerability Assessment, Risk Analysis, Threat Detection, Incident Response, Security Monitoring, Log Analysis, Access Control, IAM, Endpoint Security, Security Awareness, Security Policies & Compliance, Network Security, Cyber Risk Management</div>
-
-      <div class="label">Security Tools</div>
-      <div class="value">Wireshark, Nmap, Microsoft Defender, Windows Event Viewer, Security Logs Analysis, Network Traffic Analysis, Vulnerability Scanning Tools, Security Monitoring Tools</div>
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Daily Tier 1/2 tickets resolved</div>
     </div>
-  </section>
+    <div>
+      <div class="stat-num">1</div>
+      <div class="stat-label">Year of hands-on IT support experience</div>
+    </div>
+    <div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Core technical skill areas</div>
+    </div>
+    <div>
+      <div class="stat-num">1</div>
+      <div class="stat-label">Graduate certificate in cybersecurity</div>
+    </div>
+  </div>
 
-  <section>
-    <h3 class="section-title">Professional Experience</h3>
+  <div class="terminal">
+    <div class="bar">madhvi@portfolio: ~</div>
+    <p><span class="prompt">$</span> whoami</p>
+    <p class="val">madhvi_lashkaree</p>
+    <p><span class="prompt">$</span> certs</p>
+    <p class="val">Pursuing Microsoft 365 Endpoint Administrator Associate (MD-102)</p>
+    <p><span class="prompt">$</span> stack</p>
+    <p class="val">Windows 11/10, Active Directory, Microsoft 365, PowerShell, Python, Wireshark, Nmap, VPN/ZTNA, TCP/IP</p>
+    <p><span class="prompt">$</span> current_focus</p>
+    <p class="val">Help desk operations, endpoint administration, network troubleshooting, IT security fundamentals</p>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="inner">
+    <div class="section-eyebrow">Experience & Skills</div>
+    <h2 class="section-title">Hands-on support, documentation, and system administration</h2>
+
     <div class="job">
       <div class="job-header">
-        <div class="job-title">IT Support Analyst | Taha College, Scarborough, ON</div>
+        <div>
+          <div class="job-title">IT Support Analyst</div>
+          <div class="job-sub">Taha College · Scarborough, ON</div>
+        </div>
         <div class="job-date">Aug 2025 – Present</div>
       </div>
       <ul>
@@ -220,47 +408,176 @@
         <li>Created and maintained technical documentation, user guides, asset records, and troubleshooting procedures to improve support efficiency and knowledge sharing.</li>
       </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h3 class="section-title">Projects</h3>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="inner">
+    <div class="section-eyebrow">Technical Skills</div>
+    <h2 class="section-title">Tools and concepts across support, systems, and security</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>IT Support & Customer Service</h4>
+        <p>Frontline troubleshooting, ticketing, and end-user communication.</p>
+        <div class="pill-row">
+          <span class="pill">Help Desk</span><span class="pill">Incident Management</span>
+          <span class="pill">Remote Support</span><span class="pill">Root Cause Analysis</span>
+          <span class="pill">Ticketing Systems</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>ITSM & Documentation</h4>
+        <p>Process, knowledge base, and asset lifecycle management.</p>
+        <div class="pill-row">
+          <span class="pill">Knowledge Base</span><span class="pill">SOP Development</span>
+          <span class="pill">Asset Lifecycle</span><span class="pill">ITIL Principles</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>System Administration</h4>
+        <p>Windows environments, directory services, and account management.</p>
+        <div class="pill-row">
+          <span class="pill">Windows 11/10</span><span class="pill">Active Directory</span>
+          <span class="pill">Group Policy</span><span class="pill">Microsoft 365</span>
+          <span class="pill">Account Provisioning</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Networking</h4>
+        <p>Core protocols, routing, and network troubleshooting.</p>
+        <div class="pill-row">
+          <span class="pill">TCP/IP</span><span class="pill">DNS/DHCP</span>
+          <span class="pill">VLANs</span><span class="pill">Subnetting</span>
+          <span class="pill">Routing & Switching</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Remote Access & Communication</h4>
+        <p>Secure remote connectivity and VoIP systems.</p>
+        <div class="pill-row">
+          <span class="pill">VPN</span><span class="pill">ZTNA</span><span class="pill">VoIP</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Scripting & Automation</h4>
+        <p>Task automation for repeatable support workflows.</p>
+        <div class="pill-row">
+          <span class="pill">PowerShell</span><span class="pill">Python</span><span class="pill">Bash</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Security Operations</h4>
+        <p>Monitoring, access control, and incident response basics.</p>
+        <div class="pill-row">
+          <span class="pill">Vulnerability Assessment</span><span class="pill">Threat Detection</span>
+          <span class="pill">IAM</span><span class="pill">Endpoint Security</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Security Tools</h4>
+        <p>Hands-on tools for traffic and log analysis.</p>
+        <div class="pill-row">
+          <span class="pill">Wireshark</span><span class="pill">Nmap</span>
+          <span class="pill">Microsoft Defender</span><span class="pill">Event Viewer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="inner">
+    <div class="section-eyebrow">Projects</div>
+    <h2 class="section-title">Practical labs and support-focused build-outs</h2>
+
     <div class="projects-grid">
-
       <div class="project-card">
+        <div class="project-cat">System Administration</div>
         <div class="project-icon">🖥️</div>
         <div class="project-name">Active Directory Lab Setup</div>
-        <div class="project-desc">User provisioning, GPO, and access control in a simulated enterprise environment.</div>
+        <div class="project-desc">Simulated enterprise environment covering user provisioning, group policy, and access control.</div>
+        <div class="project-tags"><span>Active Directory</span><span>GPO</span><span>Windows Server</span></div>
         <a class="project-link" href="projects/active-directory-lab.pdf" target="_blank">View PDF</a>
       </div>
 
       <div class="project-card">
+        <div class="project-cat">Network Security</div>
         <div class="project-icon">🔐</div>
         <div class="project-name">Network Security Audit</div>
         <div class="project-desc">Vulnerability assessment and traffic analysis using Wireshark and Nmap.</div>
+        <div class="project-tags"><span>Wireshark</span><span>Nmap</span><span>Risk Analysis</span></div>
         <a class="project-link" href="projects/network-security-audit.pdf" target="_blank">View PDF</a>
       </div>
 
       <div class="project-card">
+        <div class="project-cat">Automation</div>
         <div class="project-icon">⚙️</div>
         <div class="project-name">PowerShell Automation Toolkit</div>
         <div class="project-desc">Scripts to automate account provisioning and routine IT support tasks.</div>
+        <div class="project-tags"><span>PowerShell</span><span>Automation</span></div>
         <a class="project-link" href="projects/powershell-automation.pdf" target="_blank">View PDF</a>
       </div>
 
+      <div class="project-card">
+        <div class="project-cat">IT Support</div>
+        <div class="project-icon">🎫</div>
+        <div class="project-name">Help Desk Knowledge Base</div>
+        <div class="project-desc">Structured SOPs and troubleshooting guides built to speed up common Tier 1/2 resolutions.</div>
+        <div class="project-tags"><span>Documentation</span><span>ITIL</span></div>
+        <a class="project-link" href="projects/helpdesk-knowledge-base.pdf" target="_blank">View PDF</a>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h3 class="section-title">Education</h3>
-    <div class="edu-title">Graduate Certificate in Cybersecurity</div>
-    <div class="edu-sub">Durham College — May 2024 to Jul 2025</div>
-  </section>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="inner">
+    <div class="section-eyebrow">Certifications & Achievements</div>
+    <h2 class="section-title">Continuous learning backed by credentials</h2>
 
-  <footer>
-    Open to IT Support / Help Desk / Systems Administration opportunities
-  </footer>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-name">Microsoft 365 Endpoint Administrator Associate (MD-102)</div>
+        <div class="cert-sub">Microsoft · In Progress</div>
+        <div class="cert-desc">Covers endpoint deployment, device management, Microsoft 365 administration, and security policy enforcement.</div>
+      </div>
 
-</div>
+      <div class="cert-card">
+        <div class="cert-name">Graduate Certificate in Cybersecurity</div>
+        <div class="cert-sub">Durham College · May 2024 – Jul 2025</div>
+        <div class="cert-desc">Coursework covering network security, risk analysis, incident response, and security operations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="inner">
+    <div class="section-eyebrow">Education</div>
+    <h2 class="section-title">Academic background</h2>
+
+    <div class="edu-card">
+      <div class="edu-title">Graduate Certificate in Cybersecurity</div>
+      <div class="edu-sub">Durham College · May 2024 – Jul 2025</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Madhvi Lashkaree · IT Support Specialist · Open to opportunities
+</footer>
 
 </body>
 </html>
