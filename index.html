@@ -88,6 +88,50 @@
   .edu-title { font-weight: 700; font-size: 15px; }
   .edu-sub { font-size: 14px; color: #555; }
 
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .project-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+  .project-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .project-name {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+    min-height: 36px;
+  }
+  .project-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    background: #2c5f8a;
+    padding: 7px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .project-link:hover { background: #1f4a6d; }
+
   footer {
     text-align: center;
     margin-top: 30px;
@@ -175,6 +219,34 @@
         <li>Provided in-person, phone, and remote technical support by diagnosing hardware, software, OS, network, and connectivity issues while documenting troubleshooting steps and resolutions.</li>
         <li>Created and maintained technical documentation, user guides, asset records, and troubleshooting procedures to improve support efficiency and knowledge sharing.</li>
       </ul>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="section-title">Projects</h3>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🖥️</div>
+        <div class="project-name">Active Directory Lab Setup</div>
+        <div class="project-desc">User provisioning, GPO, and access control in a simulated enterprise environment.</div>
+        <a class="project-link" href="projects/active-directory-lab.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🔐</div>
+        <div class="project-name">Network Security Audit</div>
+        <div class="project-desc">Vulnerability assessment and traffic analysis using Wireshark and Nmap.</div>
+        <a class="project-link" href="projects/network-security-audit.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">⚙️</div>
+        <div class="project-name">PowerShell Automation Toolkit</div>
+        <div class="project-desc">Scripts to automate account provisioning and routine IT support tasks.</div>
+        <a class="project-link" href="projects/powershell-automation.pdf" target="_blank">View PDF</a>
+      </div>
+
     </div>
   </section>
 
