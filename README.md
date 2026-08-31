@@ -2,7 +2,7 @@
 <h3 align="center">IT Support Specialist</h3>
 
 <p align="center">
-  📍 Whitby, Ontario, Canada &nbsp;|&nbsp; 📞 +1-905-424-8182 &nbsp;|&nbsp;
+  📍 Whitby, Ontario, Canada &nbsp;|&nbsp;
   ✉️ <a href="mailto:madhvisadhu83@gmail.com">madhvisadhu83@gmail.com</a> &nbsp;|&nbsp;
   <a href="https://linkedin.com/in/madhvisadhu">LinkedIn</a>
 </p>
