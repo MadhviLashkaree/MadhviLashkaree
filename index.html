@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madhvi Lashkaree - IT Support Specialist</title>
+<title>Madhvi Lashkaree - IT Support Specialist | Cybersecurity</title>
 <style>
   :root {
     --navy: #1a3a5c;
@@ -276,7 +276,7 @@
 <section id="home">
   <div class="inner">
     <h1>Madhvi Lashkaree</h1>
-    <div class="tag">IT Support Specialist</div>
+    <div class="tag">IT Support Specialist · Cybersecurity &amp; Security Operations</div>
     <div class="contact-row">
       📍 Whitby, Ontario, Canada <span>|</span>
       📞 +1-905-424-8182 <span>|</span>
@@ -284,11 +284,12 @@
       <a href="https://linkedin.com/in/madhvisadhu" target="_blank">LinkedIn</a>
     </div>
     <p class="summary">
-      IT support professional experienced in Windows 11, Active Directory, network troubleshooting,
-      ticket management, and end-user support. Strong customer service and communication skills, with
-      experience resolving technical issues, documenting solutions, and escalating complex problems.
-      Currently pursuing Microsoft 365 Endpoint Administrator Associate (MD-102) and seeking to grow
-      in an IT Support Specialist role.
+      IT support professional with a Graduate Certificate in Cybersecurity and hands-on lab experience
+      across SIEM deployment (Splunk, Wazuh), threat detection, penetration testing, digital forensics,
+      and network security. Skilled in Windows 11, Active Directory, and network troubleshooting, with
+      strong customer service and documentation skills from resolving technical issues and escalating
+      complex problems. Currently pursuing Microsoft 365 Endpoint Administrator Associate (MD-102) and
+      seeking to grow into a Security Operations / SOC Analyst role.
     </p>
   </div>
 </section>
@@ -380,6 +381,44 @@
       </div>
 
       <div class="skill-card">
+        <h4>SIEM &amp; Threat Detection</h4>
+        <p>Log collection, alerting, and attack detection in lab environments.</p>
+        <div class="pill-row">
+          <span class="pill">Splunk</span><span class="pill">Wazuh</span>
+          <span class="pill">Zabbix</span><span class="pill">MITRE ATT&amp;CK</span>
+          <span class="pill">Log Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Penetration Testing &amp; Vulnerability Management</h4>
+        <p>Reconnaissance, exploitation, and vulnerability scanning.</p>
+        <div class="pill-row">
+          <span class="pill">Nmap</span><span class="pill">Nessus</span>
+          <span class="pill">Hydra</span><span class="pill">aircrack-ng</span>
+          <span class="pill">Netcat</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Network Security</h4>
+        <p>Traffic analysis, IDS/IPS, and firewall configuration.</p>
+        <div class="pill-row">
+          <span class="pill">Wireshark</span><span class="pill">Snort IDS</span>
+          <span class="pill">pfSense</span><span class="pill">Nmap</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Digital Forensics</h4>
+        <p>Disk, memory, and file system forensic analysis.</p>
+        <div class="pill-row">
+          <span class="pill">Autopsy</span><span class="pill">The Sleuth Kit</span>
+          <span class="pill">WinHex</span><span class="pill">Belkasoft RAM Capturer</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
         <h4>Security Operations</h4>
         <p>Monitoring, access control, and incident response basics.</p>
         <div class="pill-row">
@@ -389,8 +428,8 @@
       </div>
 
       <div class="skill-card">
-        <h4>Security Tools</h4>
-        <p>Hands-on tools for traffic and log analysis.</p>
+        <h4>Analysis Tools</h4>
+        <p>Day-to-day tools for traffic and log analysis.</p>
         <div class="pill-row">
           <span class="pill">Wireshark</span><span class="pill">Nmap</span>
           <span class="pill">Microsoft Defender</span><span class="pill">Event Viewer</span>
@@ -407,39 +446,111 @@
 
     <div class="projects-grid">
       <div class="project-card">
-        <div class="project-cat">System Administration</div>
-        <div class="project-icon">🖥️</div>
-        <div class="project-name">Active Directory Lab Setup</div>
-        <div class="project-desc">Simulated enterprise environment covering user provisioning, group policy, and access control.</div>
-        <div class="project-tags"><span>Active Directory</span><span>GPO</span><span>Windows Server</span></div>
-        <a class="project-link" href="https://github.com/MadhviLashkaree/MadhviLashkaree/blob/dffcc15af3e8761914f2125b751b56c62cc595c2/Lab%202%20-%20Wireshark.pdf" target="_blank">View PDF</a>
+        <div class="project-cat">SIEM &amp; Threat Detection</div>
+        <div class="project-icon">🛰️</div>
+        <div class="project-name">Splunk SIEM Deployment &amp; Brute-Force Detection</div>
+        <div class="project-desc">Deployed Splunk with a universal forwarder to collect Linux auth logs, then simulated SSH password-spray and brute-force attacks with Kali/Hydra and identified the attacker IP, port, and account via Splunk searches.</div>
+        <div class="project-tags"><span>Splunk</span><span>Kali Linux</span><span>Hydra</span><span>Log Analysis</span></div>
+        <a class="project-link" href="projects/splunk-siem-brute-force-detection.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Detection Engineering</div>
+        <div class="project-icon">🎯</div>
+        <div class="project-name">Wazuh SIEM – MITRE ATT&amp;CK Credential Dumping Detection</div>
+        <div class="project-desc">Team project: built a Wazuh SIEM to detect LSASS credential dumping (MITRE ATT&amp;CK T1003.001), simulated the attack with Atomic Red Team on Windows 11, and analyzed alerts to close detection gaps.</div>
+        <div class="project-tags"><span>Wazuh</span><span>MITRE ATT&amp;CK</span><span>Atomic Red Team</span></div>
+        <a class="project-link" href="projects/wazuh-mitre-attck-credential-dumping.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Penetration Testing</div>
+        <div class="project-icon">🕵️</div>
+        <div class="project-name">Windows Domain Controller Penetration Test</div>
+        <div class="project-desc">Black-box pentest of a Windows Server 2016 domain controller following PTES/NIST SP 800-115: recon, port/service enumeration, exploitation via Certutil, and a Netcat reverse shell, with a formal findings report.</div>
+        <div class="project-tags"><span>Nmap</span><span>Netcat</span><span>PTES</span><span>Reporting</span></div>
+        <a class="project-link" href="projects/windows-dc-penetration-test.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Penetration Testing</div>
+        <div class="project-icon">📶</div>
+        <div class="project-name">Wireless Network Penetration Testing</div>
+        <div class="project-desc">Captured a WPA2 handshake and cracked it via dictionary attack using the aircrack-ng suite; on a team project, used Airgeddon to demonstrate an Evil Twin / captive-portal attack and documented mitigations.</div>
+        <div class="project-tags"><span>aircrack-ng</span><span>Airgeddon</span><span>WPA2</span></div>
+        <a class="project-link" href="projects/wireless-network-penetration-testing.pdf" target="_blank">View PDF</a>
       </div>
 
       <div class="project-card">
         <div class="project-cat">Network Security</div>
-        <div class="project-icon">🔐</div>
-        <div class="project-name">Network Security Audit</div>
-        <div class="project-desc">Vulnerability assessment and traffic analysis using Wireshark and Nmap.</div>
-        <div class="project-tags"><span>Wireshark</span><span>Nmap</span><span>Risk Analysis</span></div>
-        <a class="project-link" href="projects/network-security-audit.pdf" target="_blank">View PDF</a>
+        <div class="project-icon">🧱</div>
+        <div class="project-name">Snort IDS &amp; pfSense Firewall Deployment</div>
+        <div class="project-desc">Installed Snort as a network IDS on Ubuntu, wrote and tested a custom detection rule, then deployed pfSense with an integrated Snort package and validated alerting against live scan traffic.</div>
+        <div class="project-tags"><span>Snort</span><span>pfSense</span><span>IDS/IPS</span></div>
+        <a class="project-link" href="projects/snort-ids-pfsense-firewall.pdf" target="_blank">View PDF</a>
       </div>
 
       <div class="project-card">
-        <div class="project-cat">Automation</div>
-        <div class="project-icon">⚙️</div>
-        <div class="project-name">PowerShell Automation Toolkit</div>
-        <div class="project-desc">Scripts to automate account provisioning and routine IT support tasks.</div>
-        <div class="project-tags"><span>PowerShell</span><span>Automation</span></div>
-        <a class="project-link" href="projects/powershell-automation.pdf" target="_blank">View PDF</a>
+        <div class="project-cat">Network Security</div>
+        <div class="project-icon">🔎</div>
+        <div class="project-name">Network Traffic Analysis with Wireshark</div>
+        <div class="project-desc">Captured and analyzed live network traffic, applying protocol and host-based filters to isolate HTTP/DNS traffic and reconstruct TCP/UDP conversation streams.</div>
+        <div class="project-tags"><span>Wireshark</span><span>Packet Analysis</span></div>
+        <a class="project-link" href="projects/wireshark-traffic-analysis.pdf" target="_blank">View PDF</a>
       </div>
 
       <div class="project-card">
-        <div class="project-cat">IT Support</div>
-        <div class="project-icon">🎫</div>
-        <div class="project-name">Help Desk Knowledge Base</div>
-        <div class="project-desc">Structured SOPs and troubleshooting guides built to speed up common Tier 1/2 resolutions.</div>
-        <div class="project-tags"><span>Documentation</span><span>ITIL</span></div>
-        <a class="project-link" href="projects/helpdesk-knowledge-base.pdf" target="_blank">View PDF</a>
+        <div class="project-cat">Vulnerability Management</div>
+        <div class="project-icon">🩺</div>
+        <div class="project-name">Vulnerability Assessment with Nessus</div>
+        <div class="project-desc">Deployed Nessus on Windows Server 2019 and ran vulnerability scans against a Windows Server 2016 domain controller to identify and assess security weaknesses in a lab network.</div>
+        <div class="project-tags"><span>Nessus</span><span>Windows Server</span><span>Risk Assessment</span></div>
+        <a class="project-link" href="projects/nessus-vulnerability-assessment.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Digital Forensics</div>
+        <div class="project-icon">🧬</div>
+        <div class="project-name">Disk Imaging &amp; File Recovery</div>
+        <div class="project-desc">Used Autopsy and The Sleuth Kit to recover allocated and deleted files from disk images, generated MD5 hashes for evidence integrity, and documented findings in formal forensic memos.</div>
+        <div class="project-tags"><span>Autopsy</span><span>The Sleuth Kit</span><span>dd</span></div>
+        <a class="project-link" href="projects/disk-imaging-file-recovery.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Digital Forensics</div>
+        <div class="project-icon">🧠</div>
+        <div class="project-name">Memory Forensics &amp; NTFS Timestamp Analysis</div>
+        <div class="project-desc">Captured live RAM with Belkasoft Live RAM Capturer and analyzed it in WinHex for signs of email and browsing activity; examined NTFS MFT records to extract file creation, modification, and access timestamps.</div>
+        <div class="project-tags"><span>Belkasoft</span><span>WinHex</span><span>MFT</span></div>
+        <a class="project-link" href="projects/memory-forensics-ntfs-timestamps.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">System Administration</div>
+        <div class="project-icon">🖥️</div>
+        <div class="project-name">Active Directory Domain Infrastructure</div>
+        <div class="project-desc">Built a Windows Server 2016/2019 Active Directory domain, joined a Windows 10 client, and configured static IP addressing, DNS, and domain authentication in a segmented lab network.</div>
+        <div class="project-tags"><span>Active Directory</span><span>Windows Server</span><span>DNS</span></div>
+        <a class="project-link" href="projects/active-directory-domain-infrastructure.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Security Operations</div>
+        <div class="project-icon">📈</div>
+        <div class="project-name">Infrastructure Monitoring with Zabbix</div>
+        <div class="project-desc">Deployed Zabbix across Linux and Windows Server hosts, configured SNMP-based monitoring, and validated real-time alerting by simulating high resource-utilization incidents.</div>
+        <div class="project-tags"><span>Zabbix</span><span>SNMP</span><span>Alerting</span></div>
+        <a class="project-link" href="projects/zabbix-infrastructure-monitoring.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-cat">Security Auditing</div>
+        <div class="project-icon">📋</div>
+        <div class="project-name">Dailymotion Data Breach Case Study</div>
+        <div class="project-desc">Team project analyzing the 2016 Dailymotion breach: likely attack methodology, GDPR / Article 34 non-compliance, and recommendations on MFA, access control, and credential management.</div>
+        <div class="project-tags"><span>GDPR</span><span>Breach Analysis</span><span>Compliance</span></div>
+        <a class="project-link" href="projects/dailymotion-breach-case-study.pdf" target="_blank">View PDF</a>
       </div>
     </div>
   </div>
@@ -461,6 +572,12 @@
         <div class="cert-name">Graduate Certificate in Cybersecurity</div>
         <div class="cert-sub">Durham College · May 2024 – Jul 2025</div>
         <div class="cert-desc">Coursework covering network security, risk analysis, incident response, and security operations.</div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-name">Intro to Splunk (eLearning)</div>
+        <div class="cert-sub">Splunk · Completed March 2025</div>
+        <div class="cert-desc">Foundational training on Splunk search, data indexing, and the Splunk platform for log analysis.</div>
       </div>
     </div>
 
